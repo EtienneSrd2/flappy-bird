@@ -1,12 +1,19 @@
 
-function startGame() {
-    var pseudo = document.getElementById('pseudo').value;
     var beforeGame = document.getElementById("before");
-    var game = document.getElementById("game");
-
-        console.log(pseudo);
-        beforeGame.style.display = "none";
-        game.style.display = "block";
+    
+    function startGame() {
+        var pseudo = document.getElementById('pseudo').value;
+        
+        var game = document.getElementById("game");
+        
+        if (pseudo === ""){
+            beforeGame.style.display = "block";
+        }   else {
+            event.preventDefault();
+            beforeGame.style.display = "none";
+            game.style.display = "block";
+            console.log(pseudo);
+        }
         
 }
 
@@ -18,6 +25,7 @@ function jump(){
         let y = -65;
         // Le keyCode 32 correspond à la bare espace
         if(evt.keyCode === 32){
+            setTimeout(function(){ i = 1.3; }, 900);
             console.log('Jumped!');
             let pos = cursor.style.position;
             cursor.animate([
@@ -34,21 +42,6 @@ function jump(){
               console.log(y);
               console.log(i);
               i = i * 2;
-              setTimeout(function(){ i = 1.3; }, 800);
             }
         }, false);
     }
-
-let pipe = 0;
-
-function* idMaker(){
-    var index = 0;
-    while(true)
-        yield index++;
-}
-
-var gen = idMaker(); // "Generator { }"
-
-console.log(gen.next().value); // 0
-console.log(gen.next().value); // 1
-console.log(gen.next().value); // 2
