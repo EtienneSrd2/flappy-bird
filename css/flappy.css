@@ -42,10 +42,11 @@ label {
 {
     width: 5%;
     height: 5%;
-    display: block;
-    margin:30% 0% 0% 30%;
-    
-   
+    display: inline-block;
+    position: relative;
+    top: 400px;
+    left: 200px;
+    margin: 0;
 }
  
 #submit
@@ -56,4 +57,12 @@ label {
 
 #submit:hover {
     background-color: #57554c;
+}
+
+#game 
+{
+    height: 535px;
+    background: url('/img/mariopipe2.png');
+    animation: defile 30s linear infinite;
+    background-position-y: 50%;
 }
